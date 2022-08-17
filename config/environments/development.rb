@@ -76,4 +76,6 @@ Rails.application.configure do
 
   config.active_job.queue_adapter = :inline
   config.hosts.clear
+  config.web_console.whitelisted_ips = '153.246.242.180'
+
 end
