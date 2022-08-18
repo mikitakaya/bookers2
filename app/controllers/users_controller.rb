@@ -9,4 +9,11 @@ class UsersController < ApplicationController
 
   def edit
   end
+
+  private
+
+  def user_params_update
+   params.require(:user).permit(:name, :image, :introduction)
+  end
+
 end
