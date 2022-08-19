@@ -18,6 +18,8 @@ class BooksController < ApplicationController
   end
 
   def show
+   @user = current_user
+   @book = Book.new
   end
 
   def edit
@@ -25,6 +27,8 @@ class BooksController < ApplicationController
 
   def destroy
    @book = Book.find(params[:id])
+   @book.destroy
+   redirect_to books_path
   end
 
   def require_no_authentication
