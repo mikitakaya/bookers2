@@ -137,7 +137,12 @@
   </header>
   <!-- ここまでヘッダー -->
 
-  <%= yield %>
+  <main>
+   <p id="notice">
+    <%= flash[:notice] %>
+   </p>
+   <%= yield %>
+  </main>
 
   <!-- ここからフッター -->
   <footer>

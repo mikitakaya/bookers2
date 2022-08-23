@@ -15,6 +15,12 @@ class UsersController < ApplicationController
    @user = User.find(params[:id])
   end
 
+  def update
+   @user = current_user
+   @user.update(user_params_update)
+   redirect_to user_path(@user.id), notice: 'You have updated user successfully.'
+  end
+
   private
 
   def user_params_update
