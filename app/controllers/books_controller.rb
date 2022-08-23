@@ -36,8 +36,11 @@ class BooksController < ApplicationController
 
   def update
    @book =  Book.find(params[:id])
-   @book.update(book_params)
-   redirect_to book_path(@book.id), notice: 'You have updated book successfully.'
+   if @book.update(book_params)
+    redirect_to book_path(@book.id), notice: 'You have updated book successfully.'
+   else
+    render :edit
+   end
   end
 
   def require_no_authentication
