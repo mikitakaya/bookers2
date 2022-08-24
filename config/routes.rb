@@ -4,7 +4,6 @@ Rails.application.routes.draw do
  devise_for :users
 
  get "home/about" => "homes#about", as: "about"
- # get "books/#{}"
 
  resources :books, only: [:create, :edit, :index, :show, :update, :destroy]
  resources :users, only: [:edit, :index, :show, :update]
